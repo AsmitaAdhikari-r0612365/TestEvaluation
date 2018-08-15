@@ -93,9 +93,17 @@ public class TestService {
 		return null;
 	}
 
+	public Set<Question> getAllQuestions() {
+		Set<Question> quest = new HashSet<>();
+		for (Question que : question) {
+			quest.add(que);
+		}
+		return quest;
+	}
+	
 	public Question haalQuestion() {
 		for (Question que : question) {
-			return que;
+			return (que);
 		}
 		return null;
 	}
