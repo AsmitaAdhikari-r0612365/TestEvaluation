@@ -25,7 +25,6 @@ public class AddCategoryListener implements EventHandler<ActionEvent> {
 		cat.setDescription(detail.getDescription());
 		service.addCategory(cat);
 		detail.clearFields();
-		detail.updateOverview();
 		Stage stage = (Stage)detail.getScene().getWindow();
 		stage.close();
 		

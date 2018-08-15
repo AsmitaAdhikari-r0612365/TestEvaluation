@@ -79,10 +79,7 @@ public class CategoryDetailPane extends DetailPane {
 		titleField.clear();
 		descriptionField.clear();		
 	}
-	
-	public void updateOverview(){
-		overview.setDataItems();
-	}
+
 	
 
 }
