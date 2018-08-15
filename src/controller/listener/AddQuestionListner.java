@@ -1,10 +1,10 @@
 package controller.listener;
 
-import domain.Question;
-import domain.TestService;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
+import model.Question;
+import model.TestService;
 import view.panels.QuestionDetailPane;
 
 public class AddQuestionListner implements EventHandler<ActionEvent> {

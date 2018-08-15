@@ -6,8 +6,6 @@ import java.util.Set;
 
 import javax.swing.JOptionPane;
 
-import domain.Question;
-import domain.TestService;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -16,6 +14,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
+import model.Question;
+import model.TestService;
 
 public class TestPane extends GridPane {
 	private Label questionField;

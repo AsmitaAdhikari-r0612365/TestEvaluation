@@ -1,4 +1,4 @@
-package domain;
+package model;
 
 public class Category {
 	private String title, description;

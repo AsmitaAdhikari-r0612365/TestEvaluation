@@ -1,10 +1,10 @@
 package controller.listener;
 
-import domain.Category;
-import domain.TestService;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
+import model.Category;
+import model.TestService;
 import view.panels.CategoryDetailPane;
 
 public class AddCategoryListener implements EventHandler<ActionEvent> {

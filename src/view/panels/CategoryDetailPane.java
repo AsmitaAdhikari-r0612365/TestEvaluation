@@ -2,14 +2,14 @@ package view.panels;
 
 import controller.listener.AddCategoryListener;
 import controller.listener.CancelHandler;
-import domain.Category;
-import domain.TestService;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import model.Category;
+import model.TestService;
 
 public class CategoryDetailPane extends DetailPane {
 	private Button btnOK, btnCancel;

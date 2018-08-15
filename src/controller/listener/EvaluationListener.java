@@ -1,10 +1,10 @@
 package controller.listener;
 
-import domain.TestService;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.TestService;
 import view.panels.CategoryOverviewPane;
 import view.panels.TestPane;
 

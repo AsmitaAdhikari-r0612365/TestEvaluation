@@ -5,8 +5,6 @@ import javax.swing.JOptionPane;
 import controller.controller.Controller;
 import controller.listener.AddCategoryListener;
 import controller.listener.NewCategoryListener;
-import domain.Category;
-import domain.TestService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,6 +19,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import model.Category;
+import model.TestService;
 
 
 public class CategoryOverviewPane extends GridPane {

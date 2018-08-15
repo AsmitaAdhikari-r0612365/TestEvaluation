@@ -1,9 +1,6 @@
 package view.panels;
 
 import controller.listener.NewQuestionListner;
-import domain.Category;
-import domain.Question;
-import domain.TestService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,6 +13,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import model.Category;
+import model.Question;
+import model.TestService;
 
 public class QuestionOverviewPane extends GridPane {
 	private TableView table;

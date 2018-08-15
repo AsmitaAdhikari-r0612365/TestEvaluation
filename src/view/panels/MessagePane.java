@@ -1,7 +1,6 @@
 package view.panels;
 
 import controller.listener.EvaluationListener;
-import domain.TestService;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -12,6 +11,7 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import model.TestService;
 
 public class MessagePane extends GridPane {
 	private Button testButton;

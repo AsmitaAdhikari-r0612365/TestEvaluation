@@ -6,8 +6,6 @@ import java.util.Set;
 
 import controller.listener.AddQuestionListner;
 import controller.listener.CancelHandler;
-import domain.Question;
-import domain.TestService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,6 +20,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import model.Question;
+import model.TestService;
 
 public class QuestionDetailPane extends DetailPane {
 	private Button btnOK, btnCancel;

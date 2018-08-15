@@ -1,6 +1,6 @@
 package controller.controller;
 
-import domain.TestService;
+import model.TestService;
 import view.panels.CategoryDetailPane;
 import view.panels.CategoryOverviewPane;
 
