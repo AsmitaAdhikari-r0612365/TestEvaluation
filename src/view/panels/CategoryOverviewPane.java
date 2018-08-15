@@ -20,7 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Category;
-import model.TestService;
+import model.db.TestService;
 
 
 public class CategoryOverviewPane extends GridPane {

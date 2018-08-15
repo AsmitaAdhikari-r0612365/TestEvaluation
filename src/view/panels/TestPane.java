@@ -15,7 +15,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import model.Question;
-import model.TestService;
+import model.db.TestService;
 
 public class TestPane extends GridPane {
 	private Label questionField;

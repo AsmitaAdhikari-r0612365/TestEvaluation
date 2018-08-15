@@ -1,6 +1,6 @@
 package controller.controller;
 
-import model.TestService;
+import model.db.TestService;
 import view.panels.CategoryDetailPane;
 import view.panels.CategoryOverviewPane;
 

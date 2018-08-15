@@ -1,4 +1,4 @@
-package model;
+package model.db;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +8,9 @@ import java.util.Set;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import model.Category;
+import model.DomainException;
+import model.Question;
 
 public class TestService {
 	private ObservableList<Category> category;

@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import model.Question;
-import model.TestService;
+import model.db.TestService;
 import view.panels.QuestionDetailPane;
 
 public class AddQuestionListner implements EventHandler<ActionEvent> {

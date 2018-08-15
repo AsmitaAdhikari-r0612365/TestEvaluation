@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import model.Category;
 import model.Question;
-import model.TestService;
+import model.db.TestService;
 
 public class QuestionOverviewPane extends GridPane {
 	private TableView table;

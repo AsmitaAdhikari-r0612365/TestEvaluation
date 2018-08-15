@@ -21,7 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import model.Question;
-import model.TestService;
+import model.db.TestService;
 
 public class QuestionDetailPane extends DetailPane {
 	private Button btnOK, btnCancel;

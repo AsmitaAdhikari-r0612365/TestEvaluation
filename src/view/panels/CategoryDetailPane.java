@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import model.Category;
-import model.TestService;
+import model.db.TestService;
 
 public class CategoryDetailPane extends DetailPane {
 	private Button btnOK, btnCancel;

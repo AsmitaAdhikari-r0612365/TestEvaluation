@@ -11,7 +11,7 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import model.TestService;
+import model.db.TestService;
 
 public class MessagePane extends GridPane {
 	private Button testButton;
