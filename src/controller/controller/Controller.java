@@ -15,4 +15,6 @@ public class Controller {
 		detail = new CategoryDetailPane(overview, service);
 	}
 	
+	
+	
 }

@@ -10,9 +10,7 @@ import view.panels.CategoryDetailPane;
 public class AddCategoryListener implements EventHandler<ActionEvent> {
 	private CategoryDetailPane detail;
 	private TestService service;
-	
-	
-	
+
 	public AddCategoryListener(CategoryDetailPane detail, TestService service) {
 		this.detail = detail;
 		this.service = service;
@@ -25,9 +23,9 @@ public class AddCategoryListener implements EventHandler<ActionEvent> {
 		cat.setDescription(detail.getDescription());
 		service.addCategory(cat);
 		detail.clearFields();
-		Stage stage = (Stage)detail.getScene().getWindow();
+		Stage stage = (Stage) detail.getScene().getWindow();
 		stage.close();
-		
+
 	}
 
 }

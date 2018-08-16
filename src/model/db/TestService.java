@@ -11,15 +11,17 @@ import javafx.collections.ObservableList;
 import model.Category;
 import model.DomainException;
 import model.Question;
+import model.Test;
 
 public class TestService {
 	private ObservableList<Category> category;
 	private ObservableList<Question> question;
+	private List<Test> test;
 
 	public TestService() {
 		category = FXCollections.observableArrayList();
-
 		question = FXCollections.observableArrayList();
+		test = new ArrayList<>();
 
 	}
 
@@ -118,13 +120,22 @@ public class TestService {
 	}
 
 	public int getScores() {
+		Question q = new Question();
 		int total = 0;
-		for (Question que : question) {
-			while (que.getQuestion().equals(que.getJuistStmt())) {
-				total++;
+		for (Test que : test) {
+			while (q.getQuestion().equals(q.getJuistStmt())) {
+				total += que.getScore(); 
 			}
 		}
 		return total;
+	}
+
+	public List<Test> getTest() {
+		return test;
+	}
+
+	public void setTest(List<Test> test) {
+		this.test = test;
 	}
 
 }
