@@ -1,7 +1,8 @@
+/*@author Adhikari_Asmita-r0612365 
+ * https://github.com/AsmitaAdhikari-r0612365/TestEvaluation.git */
 package model.db;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -136,6 +137,22 @@ public class TestService {
 
 	public void setTest(List<Test> test) {
 		this.test = test;
+	}
+	
+	public List<Question> getRightAnswers() {
+		return rightAnswers;
+	}
+
+	public void setRightAnswers(List<Question> rightAnswers) {
+		this.rightAnswers = rightAnswers;
+	}
+
+	public List<Question> getWrongAnswers() {
+		return wrongAnswers;
+	}
+
+	public void setWrongAnswers(List<Question> wrongAnswers) {
+		this.wrongAnswers = wrongAnswers;
 	}
 
 	public String showResult() {

@@ -1,5 +1,8 @@
+/*@author Adhikari_Asmita-r0612365 
+ * https://github.com/AsmitaAdhikari-r0612365/TestEvaluation.git */
 package application;
 
+import controller.controller.Controller;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -7,28 +10,22 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.db.TestService;
 import view.panels.AssesMainPane;
-import view.panels.CategoryDetailPane;
 import view.panels.CategoryOverviewPane;
 import view.panels.MessagePane;
-import view.panels.QuestionDetailPane;
 import view.panels.QuestionOverviewPane;
-import view.panels.TestPane;
 
 public class Main extends Application {
 	private TestService service = new TestService();
-	
+	private Controller controller = new Controller();
+
 	@Override
 	public void start(Stage primaryStage) {
-
 		try {
 			QuestionOverviewPane questionOverviewPane = new QuestionOverviewPane(service);
-			//QuestionDetailPane questionDetailPane = new QuestionDetailPane(service);
 
 			CategoryOverviewPane categoryOverviewPanel = new CategoryOverviewPane(service);
-			//CategoryDetailPane categoryDetailPanel = new CategoryDetailPane(categoryOverviewPanel,service);
 
-			//TestPane testPane = new TestPane(service);
-			MessagePane messagePane = new MessagePane(service);
+			MessagePane messagePane = new MessagePane(service, controller);
 
 			Group root = new Group();
 			Scene scene = new Scene(root, 750, 400);

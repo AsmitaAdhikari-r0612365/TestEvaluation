@@ -1,3 +1,5 @@
+/*@author Adhikari_Asmita-r0612365 
+ * https://github.com/AsmitaAdhikari-r0612365/TestEvaluation.git */
 package view.panels;
 
 import controller.listener.AddCategoryListener;
@@ -7,8 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import model.Category;
 import model.db.TestService;
 
 public class CategoryDetailPane extends DetailPane {

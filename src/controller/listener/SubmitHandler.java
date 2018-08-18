@@ -1,8 +1,8 @@
+/*@author Adhikari_Asmita-r0612365 
+ * https://github.com/AsmitaAdhikari-r0612365/TestEvaluation.git */
 package controller.listener;
 
-import java.io.Closeable;
-import java.util.List;
-
+import controller.controller.Controller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -13,8 +13,10 @@ public class SubmitHandler implements EventHandler<ActionEvent> {
 	private TestPane pane;
 	private TestService service;
 	private int counter;
+	private Controller controller;
 	
-	public SubmitHandler(TestPane pane,TestService service) {
+	public SubmitHandler(TestPane pane,TestService service, Controller controller) {
+		this.controller = controller;
 		this.pane = pane;
 		this.service = service;
 		counter = 0;
@@ -22,17 +24,15 @@ public class SubmitHandler implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent event) {
-		String answer = pane.getSelectedStatements().toString();
+		String answer = pane.getSelectedStatements().toString().replace('[', ' ').replace(']',' ');
 		System.out.println(answer);
-		if(service.isCorrectAnswer(answer)){
+		if(service.isCorrectAnswer(answer.trim())){
 			System.out.println("Correct");
 			service.saveAnswers(service.haalQuestion(), true);
-			if(counter +1 == service.getQuestionData().size())
+			if(counter+1 == service.getQuestionData().size())
 				this.closeScene();
 			else
 				this.getNextQuestion();
-			
-			
 		}else{
 			System.out.println("Wrong");
 			service.saveAnswers(service.haalQuestion(), false);
@@ -40,10 +40,7 @@ public class SubmitHandler implements EventHandler<ActionEvent> {
 				this.closeScene();
 			else
 				this.getNextQuestion();
-		}
-		if(service.getQuestionData().size()==0){
-			service.showResult();
-		}
+		}		
 		
 	}
 	
@@ -56,6 +53,9 @@ public class SubmitHandler implements EventHandler<ActionEvent> {
 	public void closeScene(){
 		Stage stage = (Stage)pane.getScene().getWindow();
 		stage.close();
+		this.controller.getMsgPane().showScores();
+		stage.show();
+		
 	}
 	
 	
