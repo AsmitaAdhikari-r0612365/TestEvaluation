@@ -16,12 +16,15 @@ import model.Test;
 public class TestService {
 	private ObservableList<Category> category;
 	private ObservableList<Question> question;
+	private List<Question> rightAnswers, wrongAnswers;
 	private List<Test> test;
 
 	public TestService() {
 		category = FXCollections.observableArrayList();
 		question = FXCollections.observableArrayList();
 		test = new ArrayList<>();
+		rightAnswers = new ArrayList<>();
+		wrongAnswers = new ArrayList<>();
 
 	}
 
@@ -52,7 +55,6 @@ public class TestService {
 		juistStmP.add("Strategy");
 		List<String> juistStm = new ArrayList<>();
 		juistStm.add("OCP");
-		
 
 		patternStatements.add("Simple Factory");
 		patternStatements.add("Singleton");
@@ -68,10 +70,10 @@ public class TestService {
 
 		String feedback = "Voor elke patroon moet je kunnen aangeven in welke mate een principe van toepassing is.";
 
-		addQuestion(new Question("Welk patroon defineert een familie van algoritmes, kapselt ze en maakt ze verwisselbaar?",
-					new Category("Design pattern", "Design patterns in Java"), feedback, patternStatements,
-					juistStmP));
-		
+		addQuestion(new Question(
+				"Welk patroon defineert een familie van algoritmes, kapselt ze en maakt ze verwisselbaar?",
+				new Category("Design pattern", "Design patterns in Java"), feedback, patternStatements, juistStmP));
+
 		addQuestion(new Question("Welk ontwerp principe is het minst van toepassing op het Strategy patroon?",
 				new Category("Design principles", "The SOLID design principles"), feedback, principleStatements,
 				juistStm));
@@ -102,21 +104,19 @@ public class TestService {
 		}
 		return quest;
 	}
-	
+
 	public Question haalQuestion() {
 		for (Question que : question) {
-			return (que);
+			return que;
 		}
 		return null;
 	}
 
-	public boolean isCorrectAnswer(List<String> answer) {
-		boolean isJuist = true;
-		for (Question que : question) {
-			if (!que.getJuistStmt().containsAll(answer))
-				isJuist = false;
-		}
-		return isJuist;
+	public void saveAnswers(Question que, boolean isJuist) {
+		if (isJuist) {
+			rightAnswers.add(que);
+		} else
+			wrongAnswers.add(que);
 	}
 
 	public int getScores() {
@@ -124,7 +124,7 @@ public class TestService {
 		int total = 0;
 		for (Test que : test) {
 			while (q.getQuestion().equals(q.getJuistStmt())) {
-				total += que.getScore(); 
+				total += que.getScore();
 			}
 		}
 		return total;
@@ -136,6 +136,27 @@ public class TestService {
 
 	public void setTest(List<Test> test) {
 		this.test = test;
+	}
+
+	public String showResult() {
+		return "Your score: " + rightAnswers.size() + "/" + this.getQuestionData().size() + "\n" + this.showResultPerCat();
+	}
+	
+	public String showResultPerCat(){
+		String result = "";
+		for (int i = 0; i < this.getQuestionData().size(); i++) {
+			if(!result.equals(this.getQuestionData().get(i).getCategory())){
+				result += "Category-> "+this.getQuestionData().get(i).getCategory()+":\n";
+			}
+		}
+		return result;
+	}
+
+	public boolean isCorrectAnswer(String answer) {
+		if (this.haalQuestion().getJuistStmt().contains(answer))
+			return true;
+		else
+			return false;
 	}
 
 }
