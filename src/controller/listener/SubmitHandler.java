@@ -41,7 +41,9 @@ public class SubmitHandler implements EventHandler<ActionEvent> {
 			else
 				this.getNextQuestion();
 		}
-		//service.showResult();
+		if(service.getQuestionData().size()==0){
+			service.showResult();
+		}
 		
 	}
 	
